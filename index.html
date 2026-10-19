@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07111f" />
+  <title>CVR 3D Print Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a href="#home" class="brand" data-route="home" aria-label="CVR 3D Print Lab home">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img"><path d="M24 4 40 13v22L24 44 8 35V13L24 4Zm0 5.5-10.8 6.1v12.7L24 34.4l10.8-6.1V15.6L24 9.5Zm0 8 8.1 4.5L24 26.6 15.9 22l8.1-4.5Z" fill="currentColor"/></svg>
+        </div>
+        <div><strong>CVR 3D</strong><span>Print Lab</span></div>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#home" data-route="home" class="nav-link active">Home</a>
+        <a href="#custom" data-route="custom" class="nav-link">Custom Print</a>
+        <a href="#orders" data-route="orders" class="nav-link">Track Order</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="backend-pill" id="backendPill">Setup required</span><button class="btn ghost small" id="adminNavBtn">Admin</button>
+        <button class="btn primary small" data-route="custom">Start a Print</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#home" data-route="home">Home</a>
+      <a href="#custom" data-route="custom">Custom Print</a>
+      <a href="#orders" data-route="orders">Track Order</a>
+      <button id="mobileAdminBtn">Admin Dashboard</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page active" data-page="home">
+      <div class="hero shell">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse-dot"></span> Campus fabrication, simplified</div>
+          <h1>Turn your idea into a <span>real 3D print.</span></h1>
+          <p>Upload your model or request a custom design. Choose the material, colour and quantity — our lab team handles the rest.</p>
+          <div class="hero-actions">
+            <button class="btn primary large" data-route="custom">Request Custom Print <span>→</span></button>
+            <button class="btn secondary large" data-route="orders">Track an Order</button>
+          </div>
+          <div class="hero-trust">
+            <div><strong>Fast</strong><span>Campus pickup</span></div>
+            <div><strong>Flexible</strong><span>Custom CAD accepted</span></div>
+            <div><strong>Transparent</strong><span>Final quote before printing</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="3D printing illustration">
+          <div class="printer-card">
+            <div class="printer-top">
+              <div class="printer-display">PRINTING <b>72%</b></div>
+              <div class="printer-light"></div>
+            </div>
+            <div class="printer-window">
+              <div class="rail"></div>
+              <div class="print-head"><div></div></div>
+              <div class="filament-line"></div>
+              <div class="model-object">
+                <div class="layer l1"></div><div class="layer l2"></div><div class="layer l3"></div><div class="layer l4"></div><div class="layer l5"></div>
+              </div>
+              <div class="bed"></div>
+            </div>
+            <div class="printer-footer"><span></span><span></span><span></span></div>
+          </div>
+          <div class="floating-card fc-one"><small>MATERIAL</small><strong>PLA</strong><span>Easy • Reliable</span></div>
+          <div class="floating-card fc-two"><small>STATUS</small><strong>In Progress</strong><span>Ready soon</span></div>
+        </div>
+      </div>
+
+      <div class="shell section-block">
+        <div class="section-heading centered">
+          <div class="eyebrow">HOW IT WORKS</div>
+          <h2>From file to finished part</h2>
+          <p>A simple workflow designed for students, project teams and makers.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card"><div class="step-no">01</div><div class="step-icon">⬆</div><h3>Upload or describe</h3><p>Upload your 3D model, or send a sketch and description if you need help creating the CAD model.</p></article>
+          <article class="step-card"><div class="step-no">02</div><div class="step-icon">⚙</div><h3>Lab review & quote</h3><p>The lab checks printability, material use and print time, then sends you the final quotation.</p></article>
+          <article class="step-card"><div class="step-no">03</div><div class="step-icon">✓</div><h3>Approve, pay & collect</h3><p>Approve the quote, submit payment, track progress and collect the part after it is marked ready.</p></article>
+        </div>
+      </div>
+
+      <div class="shell section-block">
+        <div class="section-heading centered">
+          <div class="eyebrow">CURRENT SERVICES</div>
+          <h2>Start with what you already have</h2>
+          <p>No product catalogue is being advertised yet. Submit your own model or request help turning an idea into a printable design.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card"><div class="step-icon">▣</div><h3>I have a 3D model</h3><p>Upload STL, STEP, OBJ or 3MF files and tell the lab your preferred material, colour and quantity.</p><button class="text-btn" data-route="custom">Submit model →</button></article>
+          <article class="step-card"><div class="step-icon">✎</div><h3>I need CAD + printing</h3><p>Upload a sketch, image or PDF and describe the dimensions or function you need.</p><button class="text-btn" data-route="custom">Request design →</button></article>
+          <article class="step-card"><div class="step-icon">⌕</div><h3>I already placed an order</h3><p>Use your order ID and the same mobile number to view the quote, payment and print status.</p><button class="text-btn" data-route="orders">Track order →</button></article>
+        </div>
+        <div id="homeProductGrid" class="hidden"></div>
+      </div>
+
+      <div class="shell section-block">
+        <div class="feature-banner">
+          <div>
+            <div class="eyebrow light">HAVE ONLY A SKETCH?</div>
+            <h2>Need help creating the 3D model?</h2>
+            <p>Send a sketch, image, dimensions or concept. Our team can review it and prepare a printable CAD model.</p>
+            <button class="btn white" data-route="custom">Request Design + Print</button>
+          </div>
+          <div class="wireframe-cube" aria-hidden="true">
+            <div class="cube-face front"></div><div class="cube-face back"></div>
+            <span class="edge e1"></span><span class="edge e2"></span><span class="edge e3"></span><span class="edge e4"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page hidden" data-page="explore" aria-hidden="true">
+      <div class="shell hidden">
+        <input id="catalogSearch" type="search" />
+        <div id="filterTabs"></div>
+        <div id="catalogGrid"></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="custom">
+      <div class="page-hero shell compact">
+        <div><div class="eyebrow">CUSTOM PRINT REQUEST</div><h1>Tell us what you want to print</h1><p>Upload a model or describe your idea. You will receive a final quote after lab review.</p></div>
+      </div>
+      <div class="shell form-layout">
+        <form class="request-form card" id="customOrderForm">
+          <div class="form-section">
+            <div class="form-section-title"><span>1</span><div><h3>Contact details</h3><p>So we can update you about your print.</p></div></div>
+            <div class="form-grid two">
+              <label>Full name<input name="customerName" required placeholder="Your name" /></label>
+              <label>Phone / WhatsApp<input type="tel" name="phone" id="customPhone" inputmode="numeric" autocomplete="tel" maxlength="10" pattern="[6-9][0-9]{9}" title="Enter a valid 10-digit Indian mobile number" required placeholder="9876543210" /></label>
+              <label>Email<input type="email" name="email" placeholder="you@example.com" /></label>
+              <label>Roll number / ID<input name="rollNumber" placeholder="Optional" /></label>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="form-section">
+            <div class="form-section-title"><span>2</span><div><h3>What do you need?</h3><p>Choose the type of request.</p></div></div>
+            <div class="choice-grid" id="requestTypeChoices">
+              <label class="choice selected"><input type="radio" name="requestType" value="Print my model" checked /><b>▣</b><strong>Print my model</strong><small>I already have a 3D file</small></label>
+              <label class="choice"><input type="radio" name="requestType" value="Design + Print" /><b>✎</b><strong>Design + Print</strong><small>I have a sketch or idea</small></label>
+            </div>
+            <label class="upload-box" id="uploadBox">
+              <input type="file" name="modelFile" id="modelFile" accept=".stl,.step,.stp,.obj,.3mf,.zip,.pdf,.png,.jpg,.jpeg" />
+              <div class="upload-icon">↑</div><strong>Drop your file here or click to browse</strong><span>STL, STEP, OBJ, 3MF, ZIP, PDF or image • up to 25 MB</span><em id="fileName">No file selected</em>
+            </label>
+          </div>
+          <div class="divider"></div>
+          <div class="form-section">
+            <div class="form-section-title"><span>3</span><div><h3>Print preferences</h3><p>Choose only what you know. The lab will calculate weight and print time after slicing.</p></div></div>
+            <div class="form-grid two">
+              <label>Material<select name="material" id="materialSelect"><option value="Lab recommendation" selected>Let the lab recommend</option><option value="PLA">PLA</option><option value="PETG">PETG</option><option value="ABS">ABS</option><option value="TPU">TPU</option></select></label>
+              <label>Colour<select name="color"><option selected>Lab recommendation / available colour</option><option>Black</option><option>White</option><option>Red</option><option>Blue</option><option>Grey</option><option>Other / Ask lab</option></select></label>
+              <label>Print quality<select name="quality" id="qualitySelect"><option value="lab recommendation" selected>Let the lab recommend</option><option value="draft">Draft — faster</option><option value="standard">Standard</option><option value="fine">Fine — more detail</option></select></label>
+              <label>Quantity<input type="number" name="quantity" id="quantityInput" min="1" max="50" value="1" required /></label>
+              <label>Approx. size / dimensions<input name="dimensions" placeholder="Optional — e.g. 80 × 40 × 20 mm" /></label>
+              <label>Preferred completion date<input type="date" name="neededBy" id="neededBy" /><small class="field-help">Subject to lab confirmation and printer availability.</small></label>
+            </div>
+            <label>Project / print notes<textarea name="notes" rows="4" placeholder="Purpose, dimensions, strength requirement, surface preference, special instructions, etc."></textarea></label>
+          </div>
+          <label class="request-consent"><input type="checkbox" required /><span>I confirm that I am allowed to submit this file/design for printing and understand that every request is subject to lab review, material availability and approval.</span></label>
+          <button class="btn primary full large" type="submit">Submit request for review <span>→</span></button>
+          <p class="form-disclaimer">No printing price is calculated from customer-entered values. The lab will review/slice the model and issue the final quotation. Printing begins only after quote approval and payment verification.</p>
+        </form>
+
+        <aside class="estimate-card card" id="estimateCard">
+          <div class="sticky-inner">
+            <div class="eyebrow">HOW PRICING WORKS</div>
+            <h3 id="pricingSideTitle">Quote after lab review</h3>
+            <div class="quote-state" id="quoteState"><span>₹</span><strong>—</strong></div>
+            <p class="quote-copy" id="quoteSideCopy">Upload your model and submit the request. Our team will check printability, slice the file, calculate filament usage and print time, then send the final price.</p>
+            <div class="design-fee-box hidden" id="designFeeBox"><span>Fixed CAD design fee</span><strong id="designFeeValue">₹200</strong><small>Printing is quoted separately after the design is approved.</small></div>
+            <div class="estimate-breakdown simple">
+              <div><span>You choose</span><b>Material, colour, quantity</b></div>
+              <div><span>Lab calculates</span><b>Weight, supports, print time</b></div>
+              <div><span>You receive</span><b>Final quotation</b></div>
+              <div><span>Printing starts</span><b>Only after approval</b></div>
+            </div>
+            <div class="mini-process"><span class="done">Request</span><i></i><span>Review</span><i></i><span>Quote</span><i></i><span>Pay</span><i></i><span>Print</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page" data-page="orders">
+      <div class="page-hero shell compact">
+        <div><div class="eyebrow">ORDER TRACKING</div><h1>Check your print status</h1><p>Enter the order ID and the same mobile number used when submitting your request.</p></div>
+      </div>
+      <div class="shell tracking-layout">
+        <div class="tracking-search card">
+          <div class="tracking-fields"><label>Order ID<input id="trackingId" placeholder="Example: CVR3D-1042" autocomplete="off" /></label><label>Mobile number<input type="tel" id="trackingPhone" inputmode="numeric" autocomplete="tel" maxlength="10" pattern="[6-9][0-9]{9}" placeholder="9876543210" /></label></div>
+          <button class="btn primary full" id="trackBtn">Track order</button>
+          <p id="demoTrackHint">Try the local demo: <button class="inline-link" id="demoOrderBtn">CVR3D-1042</button></p>
+        </div>
+        <div class="tracking-result card hidden" id="trackingResult"></div>
+      </div>
+    </section>
+
+    <section class="page" data-page="admin">
+      <div class="shell admin-shell">
+        <aside class="admin-sidebar card">
+          <div class="admin-brand"><div class="brand-mark mini"><svg viewBox="0 0 48 48"><path d="M24 4 40 13v22L24 44 8 35V13L24 4Zm0 5.5-10.8 6.1v12.7L24 34.4l10.8-6.1V15.6L24 9.5Zm0 8 8.1 4.5L24 26.6 15.9 22l8.1-4.5Z" fill="currentColor"/></svg></div><div><strong>Lab Admin</strong><span>CVR 3D Print Lab</span></div></div>
+          <button class="admin-tab active" data-admin-tab="overview">▦ Overview</button>
+          <button class="admin-tab" data-admin-tab="requests">▤ Orders <span id="orderCountBadge"></span></button>
+          <button class="admin-tab" data-admin-tab="products">◈ Catalogue setup</button>
+          <button class="admin-tab" data-admin-tab="pricing">₹ Pricing</button>
+          <div class="admin-side-bottom"><button class="admin-tab" data-route="home">← Back to website</button><button class="admin-tab" id="adminLogoutBtn">Sign out</button><button class="admin-tab danger" id="resetDemoBtn">Reset demo data</button></div>
+        </aside>
+        <div class="admin-main">
+          <div class="admin-topbar"><div><p id="adminDateLabel">CVR 3D Print Lab</p><h1 id="adminPageTitle">Dashboard overview</h1></div><div class="admin-user"><span>AD</span><div><strong id="adminUserName">Admin</strong><small id="adminUserEmail">Lab team</small></div></div></div>
+          <div class="admin-panel active" data-admin-panel="overview">
+            <div class="stats-grid" id="statsGrid"></div>
+            <div class="admin-grid">
+              <div class="card admin-card"><div class="admin-card-head"><div><h3>Recent orders</h3><p>Latest requests submitted to the lab.</p></div><button class="text-btn" data-admin-tab="requests">View all →</button></div><div id="recentOrders"></div></div>
+              <div class="card admin-card"><div class="admin-card-head"><div><h3>Print queue</h3><p>Orders currently approved or printing.</p></div></div><div id="queueList"></div></div>
+            </div>
+          </div>
+          <div class="admin-panel" data-admin-panel="requests">
+            <div class="card admin-card"><div class="admin-card-head"><div><h3>All orders</h3><p>Change status as each job moves through the lab.</p></div><div class="search-box compact-search"><span>⌕</span><input id="adminSearch" placeholder="Search orders" /></div></div><div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Request</th><th>Material</th><th>Quote</th><th>Status</th><th>Action</th></tr></thead><tbody id="ordersTableBody"></tbody></table></div></div>
+          </div>
+          <div class="admin-panel" data-admin-panel="products">
+            <div class="card admin-card"><div class="admin-card-head"><div><h3>Catalogue setup</h3><p>Optional future catalogue. Keep items hidden until you have real printed products, photos and confirmed prices.</p></div><button class="btn primary small" id="addProductBtn">+ Add product</button></div><div class="product-admin-grid" id="productAdminGrid"></div></div>
+          </div>
+          <div class="admin-panel" data-admin-panel="pricing">
+            <div class="card admin-card"><div class="admin-card-head"><div><h3>Pricing settings</h3><p>Set the fixed CAD design fee and internal reference rates. Custom-print prices are entered only after lab review.</p></div></div><div class="pricing-editor" id="pricingEditor"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="siteFooter">
+    <div class="shell footer-grid">
+      <div><a href="#home" class="brand" data-route="home"><div class="brand-mark"><svg viewBox="0 0 48 48"><path d="M24 4 40 13v22L24 44 8 35V13L24 4Zm0 5.5-10.8 6.1v12.7L24 34.4l10.8-6.1V15.6L24 9.5Zm0 8 8.1 4.5L24 26.6 15.9 22l8.1-4.5Z" fill="currentColor"/></svg></div><div><strong>CVR 3D</strong><span>Print Lab</span></div></a><p class="footer-blurb">A simple ordering platform for custom 3D printing, prototypes and student project parts.</p></div>
+      <div><h4>Services</h4><a data-route="custom">Custom 3D printing</a><a data-route="custom">CAD design + print request</a><a data-route="orders">Order tracking</a></div>
+      <div><h4>Support</h4><a data-route="orders">Track order</a><a data-route="custom">Submit request</a><span>Lab approval required</span></div>
+      <div><h4>Lab note</h4><p>Every request is reviewed before printing. Material, colour, printability, price and completion time are confirmed by the lab.</p></div>
+    </div>
+    <div class="shell footer-bottom"><span>© 2026 CVR 3D Print Lab</span><span>Custom 3D printing request & tracking platform</span></div>
+  </footer>
+
+  <div class="modal-backdrop" id="productModalBackdrop">
+    <div class="modal card" id="productModal"><button class="modal-close" data-close-modal>×</button><div id="productModalContent"></div></div>
+  </div>
+  <div class="modal-backdrop" id="successModalBackdrop">
+    <div class="modal card success-modal"><div class="success-check">✓</div><h2>Request submitted!</h2><p>Your order ID is</p><div class="order-code" id="successOrderId"></div><p>Save this ID to track the request. The lab team can now review and update its status from the admin dashboard.</p><div class="modal-actions"><button class="btn primary" id="trackSubmittedBtn">Track this order</button><button class="btn secondary" data-close-success>Close</button></div></div>
+  </div>
+  <div class="modal-backdrop" id="adminLoginBackdrop">
+    <div class="modal card login-modal"><button class="modal-close" id="closeAdminLogin">×</button><div class="eyebrow">LAB ADMIN</div><h2>Sign in to the dashboard</h2><p>Use an authorized lab-admin account.</p><form id="adminLoginForm"><label>Email<input type="email" id="adminEmail" required autocomplete="username" placeholder="admin@example.com" /></label><label>Password<input type="password" id="adminPassword" required autocomplete="current-password" placeholder="••••••••" /></label><button class="btn primary full" type="submit">Sign in</button></form><p class="login-help" id="adminLoginHelp"></p></div>
+  </div>
+  <div class="modal-backdrop" id="adminActionBackdrop">
+    <div class="modal card admin-action-modal"><button class="modal-close" id="closeAdminAction">×</button><div id="adminActionContent"></div></div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
